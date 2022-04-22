@@ -10,6 +10,7 @@ import {
 } from "firebase/auth";
 import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../firbase.config";
+import { toast } from "react-toastify";
 
 export default function Signin() {
   const [showPassword, setShowPassword] = useState(false);
@@ -40,7 +41,7 @@ export default function Signin() {
       formDataCopy.timestamp = serverTimestamp();
       await setDoc(doc(db, "users", user.uid), formDataCopy);
     } catch (error) {
-      console.log(error);
+      toast.error("Bad Credentials....")
     }
 
     // ...

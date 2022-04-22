@@ -5,7 +5,9 @@ import Login from './components/Login';
 import Offer from './components/Offer';
 import Signin from './components/Signin';
 import Navbar from './components/Navbar';
-import User from './components/User'
+import User from './components/User';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
        </Routes>
        <Navbar/>
      </Router>
+     <ToastContainer/>
     </div>
   );
 }
