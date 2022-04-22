@@ -5,6 +5,7 @@ import Login from './components/Login';
 import Offer from './components/Offer';
 import Signin from './components/Signin';
 import Navbar from './components/Navbar';
+import User from './components/User'
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
        <Routes>
          <Route path = '/' element={<Index/>}/>
          <Route path = '/offers' element={<Offer/>}/>
-         <Route path = '/user' element={<Login/>}/>
+         <Route path = '/user' element={<User/>}/>
          <Route path = '/signup' element={<Signin/>}/>
          <Route path = '/login' element={<Login/>}/>
          <Route path = '/forgotpassword' element={<Forgotpassword/>}/>
