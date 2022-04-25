@@ -87,7 +87,7 @@ export default function Signin() {
                 type={showPassword ? "text" : "password"}
                 onChange={handleChange}
                 className="passwordInput"
-                placeholder="Password"
+                placeholder="Password-Minimum 6 characters"
                 value={password}
                 id="password"
               />
@@ -97,6 +97,7 @@ export default function Signin() {
                 className="showPassword"
                 onClick={() => checkShowPassword()}
               />
+              
             </div>
             <Link to="/forgotPassword" className="forgotPasswordLink">
               forgot password

@@ -59,7 +59,7 @@ button {
 
 .primaryButton {
   cursor: pointer;
-  background: #00cc66;
+  background: #6737e1;
   border-radius: 1rem;
   padding: 0.85rem 2rem;
   color: #ffffff;
@@ -121,7 +121,7 @@ button {
   width: 64px;
   height: 64px;
   border: 8px solid;
-  border-color: #00cc66 transparent #00cc66 transparent;
+  border-color: #6737e1 transparent #6737e1 transparent;
   border-radius: 50%;
   animation: spin 1.2s linear infinite;
 }
@@ -451,7 +451,7 @@ button {
   margin-top: 0.5rem;
   font-weight: 600;
   font-size: 1.1rem;
-  color: #00cc66;
+  color: #6737e1;
   margin-bottom: 0;
   display: flex;
   align-items: center;
@@ -524,7 +524,7 @@ button {
 
 .listingType {
   padding: 0.25rem 0.5rem;
-  background-color: #00cc66;
+  background-color: #6737e1;
   color: #ffffff;
   border-radius: 2rem;
   display: inline;
@@ -625,7 +625,7 @@ button {
   font-size: 1rem;
   font-weight: 600;
   color: #ffffff;
-  background-color: #00cc66;
+  background-color: #6737e1;
   padding: 0.25rem 0.75rem;
   border-radius: 1rem;
 }
@@ -643,7 +643,7 @@ button {
 .changePersonalDetails {
   cursor: pointer;
   font-weight: 600;
-  color: #00cc66;
+  color: #6737e1;
 }
 
 .profileCard {
@@ -738,7 +738,7 @@ button {
   align-items: center;
 }
 .formButtonActive {
-  background-color: #00cc66;
+  background-color: #6737e1;
   color: #ffffff;
 }
 
@@ -793,7 +793,7 @@ button {
   width: 100%;
 }
 .formInputFile::-webkit-file-upload-button {
-  background-color: #00cc66;
+  background-color: #6737e1;
   border: none;
   color: #ffffff;
   font-weight: 600;
