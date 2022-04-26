@@ -36,7 +36,7 @@ export default function Login() {
         email,
         password
       );
-      if (userCredential.user) navigate("/user");
+      if (userCredential.user) navigate("/");
     } catch (error) {
       toast.error("Bad Credentials....")
     }
