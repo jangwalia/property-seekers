@@ -28,7 +28,7 @@ export default function Navbar() {
         </li>
         <li className="navbarListItem" onClick={()=>navigate('/user')}>
         <PersonOutlineIcon fill={checkpage('/user') ? "black" : "#ccd5ae"}  width='36px' height='36px' />
-        <p className={checkpage('/user') ? 'navbarListItemNameActive' : 'navbarListItemName'}>Profile</p>
+        <p className={checkpage('/user') ? 'navbarListItemNameActive' : 'navbarListItemName'}>My Account</p>
         </li>
       </ul>
     </nav>
