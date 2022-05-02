@@ -25,3 +25,5 @@ yarn-error.log*
 
 # firebase config
 web/firebase.config.js
+userStories.txt
+
