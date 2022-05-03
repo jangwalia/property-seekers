@@ -9,7 +9,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { doc, setDoc, serverTimestamp } from "firebase/firestore";
-import { db } from "../firbase.config";
+import { db } from "../firebase.config";
 import { toast } from "react-toastify";
 
 export default function Signin() {
