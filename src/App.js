@@ -6,7 +6,8 @@ import Login from './components/Login';
 import Signin from './components/Signin';
 import Navbar from './components/Navbar';
 import User from './components/User';
-import Categories from './components/Categories'
+import Categories from './components/Categories';
+import Offer from './components/Offer';
 import PrivateRoute from './components/PrivateRoute';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -27,6 +28,7 @@ function App() {
          <Route path = '/signup' element={<Signin/>}/>
          <Route path = '/login' element={<Login/>}/>
          <Route path = '/forgotPassword' element={<Forgotpassword/>}/>
+         <Route path = '/offers' element={<Offer/>}/>
        </Routes>
        <Navbar/>
      </Router>
