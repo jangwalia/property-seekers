@@ -69,7 +69,7 @@ import {toast} from 'react-toastify'
           <Property
           key = {property.id}
           listingInfo={property.data}
-          
+          id = {property.id}
           />
         ))}
       </ul>
