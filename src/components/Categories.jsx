@@ -54,7 +54,7 @@ import {toast} from 'react-toastify'
 
     }
     fetchListing()
-  },[])
+  },[params.categoryname])
 
   return <div className="category">
     <header>
