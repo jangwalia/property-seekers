@@ -1,7 +1,7 @@
 import React, { useState,useEffect,useRef, useId } from 'react'
 import { getAuth,onAuthStateChanged } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
-
+import { toast } from 'react-toastify'
 export default function CreateListing() {
   const [geoLocation,setGeoLocation] = useState(true)
   const [formData,setFormaData] = useState({
@@ -54,11 +54,55 @@ export default function CreateListing() {
     }
   },[isMounted])
 //onSubmit function
-const onSubmit = e =>{
+const onSubmit = async e =>{
   e.preventDefault()
+  //make sure discounted price is less then regular price
+  if(discountedPrice >= regularPrice){
+    toast.error('Discounted Price should be less then regular price')
+    return
+  }
+
+  if(images.length > 6){
+    toast.error('Maximum limit of uploading images is 6')
+    return 
+  }
+  //use Geocode API
+  let geoLocation = {}
+  let location
+  let response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_GEOCODE}`)
+  const data = await response.json()
+  geoLocation.lat = data.results[0]?.geometry.location.lat ?? 0
+  geoLocation.lng = data.results[0]?.geometry.location.lng ?? 0
+  location = data.status === 'ZERO_RESULTS' ? undefined : data.results[0]?.formatted_address
+  if(location === undefined || location.includes('undefined')){
+    toast.error('Incorrect Location Address')
+    return 
+  }
 }
+
 //input onChange value
 const onChange = e =>{
+  //this will trigger each time we change any input field
+  let change = null
+  if(e.target.value === 'true'){
+    change = true;
+  }
+  if(e.target.value === 'false'){
+    change = false;
+  }
+  //handle files
+  if(e.target.files){
+    setFormaData((prevState) => ({
+      ...prevState,
+      images : e.target.files
+    }))
+  }
+  if(!e.target.files){
+    setFormaData((prevState) =>({
+      ...prevState,
+    [e.target.id] : change ?? e.target.value
+    }))
+  }
 
 }
   return (
