@@ -46,7 +46,7 @@ import {toast} from 'react-toastify'
       }
     }
     fetchListing()
-  },[])
+  },[params.categoryname])
 
   return <div className="category">
     <header>
@@ -61,7 +61,7 @@ import {toast} from 'react-toastify'
           <Property
           key = {property.id}
           listingInfo={property.data}
-          
+          id = {property.id}
           />
         ))}
       </ul>
