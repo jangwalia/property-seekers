@@ -27,3 +27,5 @@ yarn-error.log*
 firebase.config.js
 userStories.txt
 
+#.env file
+.env
