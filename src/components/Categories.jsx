@@ -1,9 +1,3 @@
-//CREATE CATEGORY COMPONENT****
-//JUST PUT SIMPLE TEXT IN CATEGORY
-//IN APP.JSX IMPORT CATEGORY COMPONENT
-//IN THE ROUTES 
-//<Route path='/category/:categoryname' element={<Category />} />
-//In the Category component
 import Property from './Property';
 import { useEffect,useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -49,9 +43,7 @@ import {toast} from 'react-toastify'
       setLoading(false)
       } catch (error) {
         toast.error('No Listing to show')
-       
       }
-
     }
     fetchListing()
   },[])
@@ -77,6 +69,4 @@ import {toast} from 'react-toastify'
     
     </> : <p>'No Listing for {params.categoryname}'</p>}
   </div>
-
-
 }
