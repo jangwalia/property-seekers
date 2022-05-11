@@ -15,10 +15,9 @@ export default function CreateListing() {
     offers : false,
     regularPrice : 0,
     discountedPrice : 0,
-    image : {},
+    images : {},
     latitude : 0,
     longitude : 0
-
   })
   //destructuring states
   const {
@@ -61,10 +60,9 @@ const onSubmit = async e =>{
     toast.error('Discounted Price should be less then regular price')
     return
   }
-
   if(images.length > 6){
     toast.error('Maximum limit of uploading images is 6')
-    return 
+    return
   }
   //use Geocode API
   let geoLocation = {}
@@ -76,10 +74,9 @@ const onSubmit = async e =>{
   location = data.status === 'ZERO_RESULTS' ? undefined : data.results[0]?.formatted_address
   if(location === undefined || location.includes('undefined')){
     toast.error('Incorrect Location Address')
-    return 
+    return
   }
 }
-
 //input onChange value
 const onChange = e =>{
   //this will trigger each time we change any input field
@@ -102,81 +99,79 @@ const onChange = e =>{
       ...prevState,
     [e.target.id] : change ?? e.target.value
     }))
-  }
-
+  } 
 }
-  return (
-    <div className='profile'>
-    <header>
-      <p className='pageHeader'>Create a Listing</p>
-    </header>
-
-    <main>
-      <form onSubmit={onSubmit}>
-        <label className='formLabel'>Sell / Rent</label>
-        <div className='formButtons'>
-          <button
-            type='button'
-            className={type === 'sale' ? 'formButtonActive' : 'formButton'}
-            id='type'
-            value='sale'
-            onClick={onChange}
-          >
-            Sell
-          </button>
-          <button
-            type='button'
-            className={type === 'rent' ? 'formButtonActive' : 'formButton'}
-            id='type'
-            value='rent'
-            onClick={onChange}
-          >
-            Rent
-          </button>
+// const onTesting = ()=>{
+//   console.log("hello")
+// }
+return (
+  <div className='profile'>
+  <header>
+    <p className='pageHeader'>Create a Listing</p>
+  </header>
+  <main>
+    <form onSubmit={onSubmit}>
+      <label className='formLabel'>Sell / Rent</label>
+      <div className='formButtons'>
+        <button
+          type='button'
+          className={type === 'sale' ? 'formButtonActive' : 'formButton'}
+          id='type'
+          value='sale'
+          onClick={onChange}
+        >
+          Sell
+        </button>
+        <button
+          type='button'
+          className={type === 'rent' ? 'formButtonActive' : 'formButton'}
+          id='type'
+          value='rent'
+          onClick={onChange}
+        >
+          Rent
+        </button>
+      </div>
+      <label className='formLabel'>Name</label>
+      <input
+        className='formInputName'
+        type='text'
+        id='name'
+        value={name}
+        onChange={onChange}
+        maxLength='32'
+        minLength='10'
+        required
+      />
+      <div className='formRooms flex'>
+        <div>
+          <label className='formLabel'>Bedrooms</label>
+          <input
+            className='formInputSmall'
+            type='number'
+            id='bedrooms'
+            value={bedrooms}
+            onChange={onChange}
+            min='1'
+            max='50'
+            required
+          />
         </div>
-
-        <label className='formLabel'>Name</label>
-        <input
-          className='formInputName'
-          type='text'
-          id='name'
-          value={name}
-          onChange={onChange}
-          maxLength='32'
-          minLength='10'
-          required
-        />
-
-        <div className='formRooms flex'>
-          <div>
-            <label className='formLabel'>Bedrooms</label>
-            <input
-              className='formInputSmall'
-              type='number'
-              id='bedrooms'
-              value={bedrooms}
-              onChange={onChange}
-              min='1'
-              max='50'
-              required
-            />
-          </div>
-          <div>
-            <label className='formLabel'>Bathrooms</label>
-            <input
-              className='formInputSmall'
-              type='number'
-              id='bathrooms'
-              value={bathrooms}
-              onChange={onChange}
-              min='1'
-              max='50'
-              required
-            />
-          </div>
+        <div>
+          <label className='formLabel'>Bathrooms</label>
+          <input
+            className='formInputSmall'
+            type='number'
+            id='bathrooms'
+            value={bathrooms}
+            onChange={onChange}
+            min='1'
+            max='50'
+            required
+          />
         </div>
-
-        <label className='formLabel'>Parking spot</label>
+      </div>
+      <label className='formLabel'>Parking spot</label>
         <div className='formButtons'>
           <button
             className={parking ? 'formButtonActive' : 'formButton'}
@@ -201,7 +196,6 @@ const onChange = e =>{
             No
           </button>
         </div>
-
         <label className='formLabel'>Furnished</label>
         <div className='formButtons'>
           <button
@@ -227,7 +221,6 @@ const onChange = e =>{
             No
           </button>
         </div>
-
         <label className='formLabel'>Address</label>
         <textarea
           className='formInputAddress'
@@ -237,7 +230,6 @@ const onChange = e =>{
           onChange={onChange}
           required
         />
-
         {!geoLocation && (
           <div className='formLatLng flex'>
             <div>
@@ -264,7 +256,6 @@ const onChange = e =>{
             </div>
           </div>
         )}
-
         <label className='formLabel'>Offer</label>
         <div className='formButtons'>
           <button
@@ -288,7 +279,6 @@ const onChange = e =>{
             No
           </button>
         </div>
-
         <label className='formLabel'>Regular Price</label>
         <div className='formPriceDiv'>
           <input
@@ -303,7 +293,6 @@ const onChange = e =>{
           />
           {type === 'rent' && <p className='formPriceText'>$ / Month</p>}
         </div>
-
         {offer && (
           <>
             <label className='formLabel'>Discounted Price</label>
@@ -319,7 +308,6 @@ const onChange = e =>{
             />
           </>
         )}
-
         <label className='formLabel'>Images</label>
         <p className='imagesInfo'>
           The first image will be the cover (max 6).
