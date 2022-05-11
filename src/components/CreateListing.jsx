@@ -2,6 +2,8 @@ import React, { useState,useEffect,useRef, useId } from 'react'
 import { getAuth,onAuthStateChanged } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import './CreateListing.css'
+
 export default function CreateListing() {
   const [geoLocation,setGeoLocation] = useState(true)
   const [formData,setFormaData] = useState({
@@ -107,12 +109,10 @@ const onChange = e =>{
 }
   return (
     <div className='profile'>
-    <header>
+    <header className='profile'>
       <p className='pageHeader'>Create a Listing</p>
     </header>
-
-    <main>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} className="profile">
         <label className='formLabel'>Sell / Rent</label>
         <div className='formButtons'>
           <button
@@ -338,7 +338,6 @@ const onChange = e =>{
           Create Listing
         </button>
       </form>
-    </main>
   </div>
   )
 }

@@ -1,6 +1,7 @@
 import{ Link } from 'react-router-dom';
 import rentImage from '../assets/property_images/for_rent.jpeg'
 import sellImage from '../assets/property_images/for_sale.jpg'
+import './Explore.css'
 
 export default function Explore() {
   return (

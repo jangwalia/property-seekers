@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { getAuth, sendPasswordResetEmail } from 'firebase/auth'
 import { toast } from 'react-toastify'
 import { ReactComponent as ArrowRight } from '../assets/svg/keyboardArrowRightIcon.svg'
+import './Forgotpassword.css'
 
 export default function Forgotpassword() {
   const [email, setEmail] = useState(" ")

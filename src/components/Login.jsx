@@ -5,6 +5,7 @@ import { ReactComponent as ArrowRightIcon } from "../assets/svg/keyboardArrowRig
 import visibilityIcon from "../assets/svg/visibilityIcon.svg";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { toast } from "react-toastify";
+import './Login.css'
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -45,7 +46,7 @@ export default function Login() {
     <div>
       <div className="pageContainer">
         <header>
-          <p className="pageHeadre">Welcome Back!</p>
+          <p className="pageHeader">Welcome Back!</p>
         </header>
         <main>
           <form onSubmit={handleSubmit}>
