@@ -1,0 +1,87 @@
+@media (min-width: 1024px) {
+  .profile{
+    margin: 3rem;
+  }
+}
+
+.profile {
+  margin: 1rem auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.pageHeader {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.profileHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.logOut {
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #6737e1;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+}
+
+.profileDetailsHeader {
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+}
+
+.personalDetailsText {
+  font-weight: 600;
+}
+
+.changePersonalDetails {
+  cursor: pointer;
+  font-weight: 600;
+  color: #6737e1;
+}
+
+.profileCard {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+}
+
+.profileName,
+.profileEmail,
+.profileNameActive {
+  all: unset;
+  margin: 0.3rem 0;
+  font-weight: 600;
+  width: 100%;
+}
+.profileNameActive {
+  background-color: rgba(44, 44, 44, 0.1);
+}
+
+.profileEmail{
+  font-weight: 500;
+}
+
+.createListing {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 0.25rem 1rem;
+  box-shadow: rgba(0, 0, 0, 0.2);
+  margin-top: 2rem;
+  font-weight: 600;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,0 +1,23 @@
+@media (min-width: 1024px) {
+  .category{
+    margin: 3rem;
+  }
+}
+
+
+.pageHeader {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.category {
+  margin-bottom: 10rem;
+  margin: 1rem;
+}
+
+.categoryListings {
+  padding: 0;
+}
+
+
+

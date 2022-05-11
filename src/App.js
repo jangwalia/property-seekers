@@ -16,9 +16,10 @@ import CreateListing from './components/CreateListing';
 
 function App() {
   return (
-
     <div className="App">
      <Router>
+     <Navbar/>
+
        <Routes>
          <Route path = '/' element={<Explore/>}/>
          <Route path = '/user' element={<PrivateRoute />}>
@@ -32,7 +33,6 @@ function App() {
          <Route path = '/offers' element={<Offer/>}/>
          <Route path = '/create-listing' element={<CreateListing/>}/>
        </Routes>
-       <Navbar/>
      </Router>
      <ToastContainer/>
     </div>

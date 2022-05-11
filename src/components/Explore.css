@@ -1,0 +1,56 @@
+@media (min-width: 1024px) {
+  .explore {
+    margin: 3rem;
+  }
+}
+
+.explore {
+  margin: 1rem;
+}
+
+.pageHeader {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+@media (min-width: 1217px) {
+  .explore {
+    margin-bottom: 10rem;
+  }
+}
+@media (max-height: 536) {
+  .explore {
+    margin-bottom: 10rem;
+  }
+}
+
+.exploreHeading,
+.exploreCategoryHeading {
+  font-weight: 700;
+}
+
+.exploreCategoryHeading {
+  margin-top: 3rem;
+}
+
+.exploreCategories {
+  display: flex;
+  justify-content: space-between;
+}
+.exploreCategories a {
+  width: 48%;
+}
+
+.exploreCategoryImg {
+  min-height: 115px;
+  height: 15vw;
+  width: 100%;
+  border-radius: 1.5rem;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.exploreCategoryName {
+  font-weight: 500;
+  text-align: left;
+}

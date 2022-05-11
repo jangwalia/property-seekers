@@ -11,6 +11,7 @@ import {
 import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase.config";
 import { toast } from "react-toastify";
+import './Signin.css'
 
 export default function Signin() {
   const [showPassword, setShowPassword] = useState(false);
@@ -62,7 +63,7 @@ export default function Signin() {
     <div>
       <div className="pageContainer">
         <header>
-          <p className="pageHeadre">Create Your Account</p>
+          <p className="pageHeader">Create Your Account</p>
         </header>
         <main>
           <form onSubmit={handleSubmit}>

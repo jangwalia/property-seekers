@@ -11,6 +11,7 @@ import {
 } from 'firebase/firestore'
 import {db} from '../firebase.config'
 import {toast} from 'react-toastify'
+import './Categories.css'
 
  export default function Offer(){
   const [listing,setListing] = useState(null)

@@ -2,6 +2,8 @@ import React, { useState,useEffect,useRef, useId } from 'react'
 import { getAuth,onAuthStateChanged } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import './CreateListing.css'
+
 export default function CreateListing() {
   const [geoLocation,setGeoLocation] = useState(true)
   const [formData,setFormaData] = useState({
@@ -101,6 +103,7 @@ const onChange = e =>{
     }))
   } 
 }
+<<<<<<< HEAD
 // const onTesting = ()=>{
 //   console.log("hello")
 // }
@@ -156,6 +159,34 @@ return (
             max='50'
             required
           />
+=======
+  return (
+    <div className='profile'>
+    <header className='profile'>
+      <p className='pageHeader'>Create a Listing</p>
+    </header>
+      <form onSubmit={onSubmit} className="profile">
+        <label className='formLabel'>Sell / Rent</label>
+        <div className='formButtons'>
+          <button
+            type='button'
+            className={type === 'sale' ? 'formButtonActive' : 'formButton'}
+            id='type'
+            value='sale'
+            onClick={onChange}
+          >
+            Sell
+          </button>
+          <button
+            type='button'
+            className={type === 'rent' ? 'formButtonActive' : 'formButton'}
+            id='type'
+            value='rent'
+            onClick={onChange}
+          >
+            Rent
+          </button>
+>>>>>>> cc853d7974b68f55a2146b0a20f13d3dc96a7da3
         </div>
         <div>
           <label className='formLabel'>Bathrooms</label>
@@ -326,7 +357,6 @@ return (
           Create Listing
         </button>
       </form>
-    </main>
   </div>
   )
 }
