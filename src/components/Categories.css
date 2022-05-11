@@ -1,9 +1,8 @@
 @media (min-width: 1024px) {
-  .category{
+  .category {
     margin: 3rem;
   }
 }
-
 
 .pageHeader {
   font-size: 2rem;
@@ -18,6 +17,3 @@
 .categoryListings {
   padding: 0;
 }
-
-
-
