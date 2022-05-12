@@ -224,72 +224,24 @@ button {
   margin-top: 2rem;
 }
 
-.listingDetails {
-  margin-bottom: 10rem;
-}
 
-.shareIconDiv {
-  cursor: pointer;
-  position: fixed;
-  top: 3%;
-  right: 5%;
-  z-index: 2;
-  background-color: #ffffff;
-  border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.listingName {
-  font-weight: 600;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
 
-.listingLocation {
-  margin-top: 0;
-  font-weight: 600;
-}
 
-.discountPrice {
-  padding: 0.25rem 0.5rem;
-  background-color: #000000;
-  color: #ffffff;
-  border-radius: 1rem;
-  font-size: 0.8rem;
-  font-weight: 600;
-  display: inline;
-}
 
-.listingType {
-  padding: 0.25rem 0.5rem;
-  background-color: #6737e1;
-  color: #ffffff;
-  border-radius: 2rem;
-  display: inline;
-  font-weight: 600;
-  font-size: 0.8rem;
-  margin-right: 1rem;
-}
 
-.listingDetailsList {
-  padding: 0;
-  list-style-type: none;
-}
+
+
+
+
+
 .listingDetailsList li {
   margin: 0.3rem 0;
   font-weight: 500;
   opacity: 0.8;
 }
 
-.listingLocationTitle {
-  margin-top: 2rem;
-  font-weight: 600;
-  font-size: 1.25rem;
-}
+
 
 .leafletContainer {
   width: 100%;
@@ -303,16 +255,7 @@ button {
   }
 }
 
-.linkCopied {
-  position: fixed;
-  top: 9%;
-  right: 5%;
-  z-index: 2;
-  background-color: #ffffff;
-  border-radius: 1rem;
-  padding: 0.5rem 1rem;
-  font-weight: 600;
-}
+
 
 .contactListingName {
   margin-top: -1rem;
