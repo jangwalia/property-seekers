@@ -64,7 +64,7 @@ import './Categories.css'
           <Property
           key = {property.id}
           listingInfo={property.data}
-          
+          id = {property.id}
           />
         ))}
       </ul>
