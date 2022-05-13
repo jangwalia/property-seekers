@@ -5,7 +5,7 @@
 }
 
 .explore {
-  margin: 1rem;
+  margin: 1.5rem;
 }
 
 .pageHeader {
@@ -48,9 +48,16 @@
   border-radius: 1.5rem;
   object-fit: cover;
   margin: 0 auto;
+  transition: 0.5s;
 }
 
-.exploreCategoryName {
+.exploreCategoryImg:hover {
+  transform:scale(1.05);
+  z-index: 5;
+}
+
+p.exploreCategoryname {
+  margin-top: 15px;
   font-weight: 500;
-  text-align: left;
+  text-align: center;
 }

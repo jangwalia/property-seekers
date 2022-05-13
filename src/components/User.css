@@ -84,4 +84,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: 0.5s;
+}
+
+.createListing:hover {
+  transform:scale(1.05);
+  z-index: 5;
 }
