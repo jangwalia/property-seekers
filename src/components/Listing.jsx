@@ -71,7 +71,7 @@ export default function Listing() {
         {/* map here */}
         {/*CONTACT LANDORD IF LISTING OWNER IS NOT THE USER */}
         {auth.currentUser?.uid !== listing.userRef && (
-          <Link to={`/contact/${listing.userRef}?listingName=${listing.name}&location=${listing.location}`}
+          <Link to={`/contact/${listing.userRef}?listingName=${listing.name}`}
            className='primaryButton'>Contact LandLord</Link>
         )}
       </div>

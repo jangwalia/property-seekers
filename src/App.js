@@ -13,7 +13,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import CreateListing from './components/CreateListing';
 import Listing from './components/Listing';
-
+import Contactlandlord from './components/Contactlandlord';
 function App() {
   return (
     <div className="App">
@@ -33,6 +33,7 @@ function App() {
          <Route path = '/offers' element={<Offer/>}/>
          <Route path = '/create-listing' element={<CreateListing/>}/>
          <Route path='/categories/:categoryname/:listingID' element={<Listing/>}/>
+         <Route path='/contact/:landLordID' element={<Contactlandlord/>}/>
        </Routes>
      </Router>
      <ToastContainer/>
