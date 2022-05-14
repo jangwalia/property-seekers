@@ -10,25 +10,10 @@ import "./Listing.css";
 
 
 export default function Listing() {
-feature/showMap
+
   const [listing, setListing] = useState(null)
   const [loading,setLoading] = useState(true)
   const [shareLink, setShareLink] = useState(false)
-  const navigate = useNavigate()
-  const params = useParams()
-  const auth = getAuth()
-
- useEffect(()=>{
-   const fetchListing = async ()=>{
-    const docRef = doc(db, 'listings',params.listingID)
-    const docSnap = await getDoc(docRef)
-    if(docSnap.exists()){
-      setListing(docSnap.data())
-      setLoading(false)
-
-  const [listing,setListing] = useState('')
-  const [geolocation,setGeolocation] = useState('')
-  const [shareLink,setShareLink] = useState(false)
   const navigate = useNavigate()
   const params = useParams()
   const auth = getAuth()
@@ -39,12 +24,10 @@ feature/showMap
       const docResult = await getDoc(docRef)
       if(docResult.exists()){
         setListing(docResult.data())
-        setGeolocation(docResult.data().geolocation)
+        setLoading(false)
         
       }
- 
     }
-   }
    fetchListing()
  },[navigate,params.listingID])
  if (loading) {
