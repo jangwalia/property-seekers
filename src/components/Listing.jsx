@@ -8,6 +8,7 @@ import './Listing.css'
 
 export default function Listing() {
   const [listing,setListing] = useState('')
+  const [geolocation,setGeolocation] = useState('')
   const [shareLink,setShareLink] = useState(false)
   const navigate = useNavigate()
   const params = useParams()
@@ -19,6 +20,8 @@ export default function Listing() {
       const docResult = await getDoc(docRef)
       if(docResult.exists()){
         setListing(docResult.data())
+        setGeolocation(docResult.data().geolocation)
+        
       }
     }
     fetchListing()
@@ -69,6 +72,7 @@ export default function Listing() {
           Location
         </p>
         {/* map here */}
+        
         {/*CONTACT LANDORD IF LISTING OWNER IS NOT THE USER */}
         {auth.currentUser?.uid !== listing.userRef && (
           <Link to={`/contact/${listing.userRef}?listingName=${listing.name}`}
