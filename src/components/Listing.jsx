@@ -10,6 +10,7 @@ import "./Listing.css";
 
 
 export default function Listing() {
+feature/showMap
   const [listing, setListing] = useState(null)
   const [loading,setLoading] = useState(true)
   const [shareLink, setShareLink] = useState(false)
@@ -24,6 +25,24 @@ export default function Listing() {
     if(docSnap.exists()){
       setListing(docSnap.data())
       setLoading(false)
+
+  const [listing,setListing] = useState('')
+  const [geolocation,setGeolocation] = useState('')
+  const [shareLink,setShareLink] = useState(false)
+  const navigate = useNavigate()
+  const params = useParams()
+  const auth = getAuth()
+  //fetch the listing from database
+  useEffect(()=>{
+    const fetchListing = async ()=>{
+      const docRef = doc(db,'listings',params.listingID)
+      const docResult = await getDoc(docRef)
+      if(docResult.exists()){
+        setListing(docResult.data())
+        setGeolocation(docResult.data().geolocation)
+        
+      }
+ 
     }
    }
    fetchListing()
@@ -81,6 +100,7 @@ export default function Listing() {
           <li>{listing.parking && "Parking Spot Provided"}</li>
           <li>{listing.furnished && "Furnished"}</li>
         </ul>
+
         <p className="listingLocationTitle">Location</p>
         <div className="leafletContainer">
           <MapContainer
@@ -101,6 +121,13 @@ export default function Listing() {
             </Marker> 
             </MapContainer>
         </div> 
+
+        <p className="listingLocationTitle">
+          Location
+        </p>
+        {/* map here */}
+        
+
         {/*CONTACT LANDORD IF LISTING OWNER IS NOT THE USER */}
         {auth.currentUser?.uid !== listing.userRef && (
           <Link
