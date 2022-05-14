@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Spinner from "./Spinner";
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { getDoc, doc } from 'firebase/firestore'
 import { getAuth } from "firebase/auth";
@@ -6,12 +7,12 @@ import { db } from "../firebase.config";
 import shareIcon from "../assets/svg/shareIcon.svg";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "./Listing.css";
-import { async } from "@firebase/util";
+
 
 export default function Listing() {
-  const [listing, setListing] = useState('')
+  const [listing, setListing] = useState(null)
+  const [loading,setLoading] = useState(true)
   const [shareLink, setShareLink] = useState(false)
-
   const navigate = useNavigate()
   const params = useParams()
   const auth = getAuth()
@@ -22,11 +23,14 @@ export default function Listing() {
     const docSnap = await getDoc(docRef)
     if(docSnap.exists()){
       setListing(docSnap.data())
+      setLoading(false)
     }
    }
    fetchListing()
  },[navigate,params.listingID])
-
+ if (loading) {
+  return <Spinner />
+}
 
   return (
     
@@ -81,10 +85,21 @@ export default function Listing() {
         <div className="leafletContainer">
           <MapContainer
             style={{ height: "100%", width: "100%" }}
-            //center={[]}
+            center={[listing.geolocation.lat,listing.geolocation.lng]}
             zoom={13}
             scrollWheelZoom={false}
-          ></MapContainer>
+          >
+             <TileLayer
+             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+
+             <Marker
+              position={[listing.geolocation.lat,listing.geolocation.lng]}
+            >
+              <Popup>{listing.location}</Popup>
+            </Marker> 
+            </MapContainer>
         </div> 
         {/*CONTACT LANDORD IF LISTING OWNER IS NOT THE USER */}
         {auth.currentUser?.uid !== listing.userRef && (
