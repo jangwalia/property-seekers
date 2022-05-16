@@ -2,7 +2,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { ReactComponent as OfferIcon } from "../assets/svg/localOfferIcon.svg";
 import { ReactComponent as ExploreIcon } from "../assets/svg/exploreIcon.svg";
 import { ReactComponent as PersonOutlineIcon } from "../assets/svg/personOutlineIcon.svg";
-
+import {ReactComponent as LogoIcon} from "../assets/logos/property-seekers-LOGO.svg";
 import "./Navbar.css";
 
 export default function Navbar() {
@@ -19,7 +19,7 @@ export default function Navbar() {
     <nav class="navbar navbar-expand-lg navbar-light ">
       <div className="container-fluid">
         <a class="navbar-brand" href="/">
-          Property Seekers
+          <LogoIcon width="60%" height="60%"/>
         </a>
         <button
           class="navbar-toggler"
@@ -39,7 +39,7 @@ export default function Navbar() {
             <ul className="navbarListItems">
               <li className="navbarListItem" onClick={() => navigate("/")}>
                 <ExploreIcon
-                  fill={checkpage("/") ? "black" : "#85586F"}
+                  fill={checkpage("/") ? "#FF5C00" : "#000000"}
                   width="36px"
                   height="36px"
                 />
@@ -58,7 +58,7 @@ export default function Navbar() {
                 onClick={() => navigate("/offers")}
               >
                 <OfferIcon
-                  fill={checkpage("/offers") ? "black" : "#85586F"}
+                  fill={checkpage("/offers") ? "#FF5C00" : "#000000"}
                   width="36px"
                   height="36px"
                 />
@@ -74,7 +74,7 @@ export default function Navbar() {
               </li>
               <li className="navbarListItem" onClick={() => navigate("/user")}>
                 <PersonOutlineIcon
-                  fill={checkpage("/user") ? "black" : "#85586F"}
+                  fill={checkpage("/user") ? "#FF5C00" : "#000000"}
                   width="36px"
                   height="36px"
                 />
