@@ -6,8 +6,12 @@ import { getAuth } from "firebase/auth";
 import { db } from "../firebase.config";
 import shareIcon from "../assets/svg/shareIcon.svg";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import "swiper/css/pagination";
 import "./Listing.css";
-
+SwiperCore.use([Navigation,Pagination,Scrollbar,A11y])
 
 export default function Listing() {
 
@@ -38,7 +42,22 @@ export default function Listing() {
     
     <main>
       
-      {/*slideshow */}
+      <Swiper
+      modules={[Navigation, Pagination, Scrollbar, A11y]}
+       slidesPerView={1} pagination={{ clickable: true }}>
+        {listing.imageUrls.map((url,index) =>(
+          <SwiperSlide key = {index} 
+          style = {{background : `url(${listing.imageUrls[index]})
+          center no-repeat`,
+          backgroundSize: 'cover',
+          height:'400px'
+          
+          }}>
+
+          </SwiperSlide>
+        ))}
+
+      </Swiper>
       {/* share link which user can send to someone */}
       <div
         className="shareIconDiv"
