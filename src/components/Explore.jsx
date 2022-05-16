@@ -1,7 +1,9 @@
 import{ Link } from 'react-router-dom';
 import rentImage from '../assets/property_images/for_rent.jpeg'
 import sellImage from '../assets/property_images/for_sale.jpg'
+import Homeslider from './Homeslider';
 import './Explore.css'
+
 
 export default function Explore() {
   return (
@@ -10,7 +12,7 @@ export default function Explore() {
         <p className='pageHeader'>Explore Listings</p>
       </header>
       <main>
-        {/*slider*/}
+        <Homeslider/>
         <p className="exploreCategoryHeading">Categories</p>
         <div className="exploreCategories">
           <Link to='/categories/rent'>
