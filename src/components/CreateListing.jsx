@@ -7,6 +7,7 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import Spinner from "./Spinner"
 import { db } from "../firebase.config";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -92,10 +93,9 @@ export default function CreateListing() {
       );
 
       const data = await response.json();
-      console.log("testing data", data);
       geolocation.lat = data.results[0]?.geometry.location.lat ?? 0;
       geolocation.lng = data.results[0]?.geometry.location.lng ?? 0;
-
+        console.log(geolocation.lat)
       location =
         data.status === "ZERO_RESULTS"
           ? undefined
@@ -201,7 +201,10 @@ export default function CreateListing() {
       }));
     }
   };
-
+  if (loading) {
+    return <Spinner/>
+  }
+  
   return (
     <div className="profile">
       <header>
