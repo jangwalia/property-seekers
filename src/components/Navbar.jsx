@@ -25,8 +25,8 @@ export default function Navbar() {
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
@@ -34,7 +34,8 @@ export default function Navbar() {
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          </ul>
           <div className="d-flex">
             <ul className="navbarListItems">
               <li className="navbarListItem" onClick={() => navigate("/")}>
