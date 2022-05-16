@@ -2,7 +2,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { ReactComponent as OfferIcon } from "../assets/svg/localOfferIcon.svg";
 import { ReactComponent as ExploreIcon } from "../assets/svg/exploreIcon.svg";
 import { ReactComponent as PersonOutlineIcon } from "../assets/svg/personOutlineIcon.svg";
-import {ReactComponent as LogoIcon} from "../assets/logos/property-seekers-LOGO.svg";
+import { ReactComponent as LogoIcon } from "../assets/logos/property-seekers-LOGO.svg";
 import "./Navbar.css";
 
 export default function Navbar() {
@@ -19,7 +19,7 @@ export default function Navbar() {
     <nav class="navbar navbar-expand-lg navbar-light ">
       <div className="container-fluid">
         <a class="navbar-brand" href="/">
-          <LogoIcon width="60%" height="60%"/>
+          <LogoIcon width="60%" height="60%" />
         </a>
         <button
           class="navbar-toggler"
@@ -30,12 +30,11 @@ export default function Navbar() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-        <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-          </ul>
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0"></ul>
           <div className="d-flex">
             <ul className="navbarListItems">
               <li className="navbarListItem" onClick={() => navigate("/")}>

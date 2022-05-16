@@ -3,7 +3,7 @@
   bottom: 0;
   right: 0;
   height: 85px; */
-  background-color: #99C4C8;
+  background-color: #99c4c8;
   z-index: 1000;
   /* display: flex;
   justify-content: center;
@@ -40,7 +40,5 @@
   color: #000000;
 }
 .navbarListItemNameActive {
-  color: #FF5C00;
+  color: #ff5c00;
 }
-
-

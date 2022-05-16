@@ -206,12 +206,8 @@ export default function CreateListing() {
   }
   
   return (
-    <div className="profile">
-      <header>
+    <div className="listingForm">
         <p className="pageHeader">Create a Listing</p>
-      </header>
-
-      <main>
         <form onSubmit={onSubmit}>
           <label className="formLabel">Sell / Rent</label>
           <div className="formButtons">
@@ -411,7 +407,6 @@ export default function CreateListing() {
             Create Listing
           </button>
         </form>
-      </main>
     </div>
   );
 }

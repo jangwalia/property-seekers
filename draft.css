@@ -1,13 +1,13 @@
 @media (min-width: 1024px) {
-  .listingForm{
+  .profile{
     margin: 3rem;
   }
 }
 
-.listingForm {
-  max-width: 600px;
-  margin: auto;
-  padding: 50px 70px;
+.profile {
+  margin: 1rem auto;
+  width: 50%;
+  padding: 10px;
 }
 
 .pageHeader {
