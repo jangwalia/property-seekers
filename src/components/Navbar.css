@@ -37,8 +37,10 @@
   margin-top: 0.25rem;
   font-size: 14px;
   font-weight: 600;
-  color: #85586F;
+  color: #000000;
 }
 .navbarListItemNameActive {
-  color: #4a4949;
+  color: #FF5C00;
 }
+
+
