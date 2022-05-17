@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ReactComponent as ArrowRightIcon } from "../assets/svg/keyboardArrowRightIcon.svg";
 import visibilityIcon from "../assets/svg/visibilityIcon.svg";
+import login from "../assets/svg/login.png"
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { toast } from "react-toastify";
 import './Login.css'
@@ -44,9 +45,10 @@ export default function Login() {
   };
   return (
     <div>
-      <div className="pageContainer">
-        <header>
-          <p className="pageHeader">Welcome Back!</p>
+      <div className="loginContainer shadow-lg p-8 mb-5 rounded">
+        <header className="loginTitle">
+          <img src={login} className="loginIcon"/>
+          <p >Welcome Back!</p>
         </header>
         <main>
           <form onSubmit={handleSubmit}>
