@@ -8,6 +8,7 @@ import {
   where,
   orderBy,
   limit,
+  startAfter
 } from "firebase/firestore";
 import { db } from "../firebase.config";
 import { toast } from "react-toastify";
@@ -15,6 +16,7 @@ import './Categories.css'
 
 export default function Categories() {
   const [listing, setListing] = useState(null);
+  const [lastListing,setLastListing]= useState(null)
   const [loading, setLoading] = useState(true);
   const params = useParams();
   useEffect(() => {
@@ -27,11 +29,13 @@ export default function Categories() {
           listingRef,
           where("type", "==", params.categoryname),
           orderBy("timestamp", "desc"),
-          limit(10)
+          limit(6)
         );
         //we will get result
 
         const queryResult = await getDocs(q);
+        const lastVisibleListing = queryResult.docs[queryResult.docs.length - 1]
+        setLastListing(lastVisibleListing)
         let properties = [];
         queryResult.forEach((element) => {
           return properties.push({
@@ -47,7 +51,37 @@ export default function Categories() {
     };
     fetchListing();
   }, [params.categoryname]);
+// Load More
+const onFetchLoadMore = async () => {
+  try {
+    //const listingRef = collection(db,'listings')
+    const listingRef = collection(db, "listings");
+    //create a query
+    const q = query(
+      listingRef,
+      where("type", "==", params.categoryname),
+      orderBy("timestamp", "desc"),
+      limit(6),
+      startAfter(lastListing)
+    );
+    //we will get result
 
+    const queryResult = await getDocs(q);
+    const lastVisibleListing = queryResult.docs[queryResult.docs.length - 1]
+    setLastListing(lastVisibleListing)
+    let properties = [];
+    queryResult.forEach((element) => {
+      return properties.push({
+        id: element.id,
+        data: element.data(),
+      });
+    });
+    setListing((prevState)=>[...prevState,...properties]);
+    setLoading(false);
+  } catch (error) {
+    toast.error("No Listing to show");
+  }
+};
   return (
     <div className="category">
       <header>
@@ -70,6 +104,12 @@ export default function Categories() {
               ))}
             </ul>
           </main>
+          <br/>
+          <br/>
+          {lastListing &&(
+            <p className="loadMore" onClick = {onFetchLoadMore}>Load More</p>
+          )}
+
         </>
       ) : (
         <p>'No Listing for {params.categoryname}'</p>
