@@ -8,6 +8,7 @@ import rightArrow from "../assets/svg/keyboardArrowRightIcon.svg";
 import homeIcon from "../assets/svg/homeIcon.svg";
 import Spinner from "./Spinner";
 import Property from './Property'
+import Confirm from "../Helper/confirm";
 import './User.css'
 
 export default function User() {
@@ -73,6 +74,9 @@ export default function User() {
       [e.target.id]: e.target.value,
     }));
   };
+
+
+
   // onDelete function
   const onDelete = async (listingID) =>{
     if(window.confirm('Are you sure you want to delete this listing ?')){
@@ -84,11 +88,15 @@ export default function User() {
       toast.success('Successfully Deleted Listing')
     }
   }
+  const showConfirm = (id)=>{
+    return(<Confirm id = {id}/>)
+  }
   if(loading){
     return <Spinner/>
   }
   return (
     <div className="profile">
+      
       <header className="profileHeader">
         <p className="pageHeader">My Profile</p>
         <button type="button" className="logOut" onClick={onlogout}>
