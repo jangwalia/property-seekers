@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { getAuth, sendPasswordResetEmail } from 'firebase/auth'
 import { toast } from 'react-toastify'
 import { ReactComponent as ArrowRight } from '../assets/svg/keyboardArrowRightIcon.svg'
+import forgotPassword from "../assets/svg/forgotPassword.png"
 import './Forgotpassword.css'
 
 export default function Forgotpassword() {
@@ -29,9 +30,10 @@ export default function Forgotpassword() {
   }
  
   return (
-    <div className='pageContainer'>
-      <header>
-        <p className='pageHeader'>
+    <div className='passwordContainer shadow-lg p-8 mb-5 rounded'>
+      <header className='forgotPasswordTitle'>
+      <img src={forgotPassword} className="forgotPasswordIcon"/>
+        <p >
           Forgot Password
         </p>
       </header>
@@ -45,7 +47,7 @@ export default function Forgotpassword() {
             <div className='signInText'>
               Send Reset Link
             </div>
-            <button className='signInButton'><ArrowRight fill='white' width='34px' height='34px' /> 
+            <button className='passwordResetButton'><ArrowRight fill='white' width='34px' height='34px' /> 
             </button>
           </div>
         </form>
