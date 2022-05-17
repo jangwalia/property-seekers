@@ -1,6 +1,6 @@
-import Property from './Property';
-import { useEffect,useState } from 'react';
-import { useParams } from 'react-router-dom';
+import Property from "./Property";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import {
   collection,
   getDocs,
@@ -24,7 +24,7 @@ import './Categories.css'
      
       try {
         //const listingRef = collection(db,'listings')
-        const listingRef = collection(db,'listings')
+        const listingRef = collection(db, "listings");
         //create a query
         const q = query(
           listingRef,
@@ -40,21 +40,22 @@ import './Categories.css'
         setLastListing(lastVisibleListing)
         let properties = []
         queryResult.forEach((element) => {
-            return properties.push({
-            id : element.id,
-            data : element.data()
-          })
-       })
-      setListing(properties)
-      setLoading(false)
+          return properties.push({
+            id: element.id,
+            data: element.data(),
+          });
+        });
+        setListing(properties);
+        setLoading(false);
       } catch (error) {
-        toast.error('No Listing to show')
-       
+        toast.error("No Listing to show");
       }
+    };
+    fetchListing();
+  }, []);
 
-    }
-    fetchListing()
-  },[])
+    
+  
   const onFetchLoadMore = async () => {
     try {
       //const listingRef = collection(db,'listings')

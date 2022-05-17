@@ -1,16 +1,29 @@
 @media (min-width: 1024px) {
-  .pageContainer{
+  .loginContainer{
     margin: 3rem;
   }
 }
 
-.pageContainer{
-  margin: 1rem;
+.loginContainer{
+  margin: auto;
+  margin-top: 100px;
+  padding: 50px 70px;
+  width: 50%;
+  background-color: #99c4c8;
+  justify-content: space-between;
 }
 
-.pageHeader {
+.loginTitle {
   font-size: 2rem;
   font-weight: 800;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.loginIcon {
+  width: 50px;
+  height: 50px;
 }
 
 .emailInput {
@@ -37,13 +50,13 @@
 
 .forgotPasswordLink {
   cursor: pointer;
-  color: #6737e1;
+  color: #FF5C00;
   font-weight: 600;
   text-align: right;
 }
 
 .signInBar {
-  margin-top: 3rem;
+  margin-top: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -71,18 +84,19 @@
   align-items: center;
   width: 3rem;
   height: 3rem;
-  background-color: #6737e1;
+  background-color: #FF5C00;
   border-radius: 50%;
+  margin-bottom: 15px;
 }
 @media (min-width: 1024px) {
   .signInButton {
-    margin-left: 3rem;
+    margin-left: 1rem;
   }
 }
 
 .registerLink {
   margin-top: 4rem;
-  color: #6737e1;
+  color: #FF5C00;
   font-weight: 600;
   text-align: center;
   margin-bottom: 3rem;

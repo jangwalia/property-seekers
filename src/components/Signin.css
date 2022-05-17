@@ -1,10 +1,23 @@
-.pageContainer{
-  margin: 1rem;
+.signInContainer{
+  margin: auto;
+  margin-top: 100px;
+  padding: 50px 70px;
+  width: 50%;
+  background-color: #99c4c8;
+  justify-content: space-between;
 }
 
-.pageHeader {
+.signInTitle {
   font-size: 2rem;
   font-weight: 800;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.createAccountIcon {
+  width: 50px;
+  height: 50px;
 }
 
 .nameInput {
@@ -36,13 +49,13 @@
 
 .forgotPasswordLink {
   cursor: pointer;
-  color: #6737e1;
+  color: #FF5C00;
   font-weight: 600;
   text-align: right;
 }
 
 .signUpBar {
-  margin-top: 3rem;
+  margin-top: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -70,19 +83,20 @@
   align-items: center;
   width: 3rem;
   height: 3rem;
-  background-color: #6737e1;
+  background-color: #FF5C00;
   border-radius: 50%;
+  margin-bottom: 15px;
 }
 @media (min-width: 1024px) {
   .signUpButton {
-    margin-left: 3rem;
+    margin-left: 1rem;
   }
 }
 
 .registerLink {
-  margin-top: 4rem;
-  color: #6737e1;
+  margin-top: 3rem;
+  color: #FF5C00;
   font-weight: 600;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
