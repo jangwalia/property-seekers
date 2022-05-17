@@ -30,12 +30,17 @@
 }
 
 .exploreCategoryHeading {
-  margin-top: 3rem;
+  margin-top: 5rem;
+  text-align: center;
+  margin-bottom: 5rem;
+  border-bottom: 2px black solid;
+  padding-bottom: 25px;
 }
 
 .exploreCategories {
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 .exploreCategories a {
   width: 48%;
@@ -48,7 +53,6 @@
   border-radius: 1.5rem;
   object-fit: cover;
   margin: 0 auto;
-  transition: 0.5s;
 }
 
 .exploreCategoryImg:hover {
@@ -56,8 +60,44 @@
   z-index: 5;
 }
 
-p.exploreCategoryname {
+.image__overlay {
+  border-radius: 1.5rem;
+  position: absolute;
+  top: 0;
+  width: 48%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.image__overlay:hover {
+  opacity: 1;
+}
+
+.image__overlay > * {
+  transform: translateY(20px);
+  transition: transform 0.25s;
+}
+
+.image__overlay:hover > * {
+  transform: translateY(0);
+}
+
+p.exploreCategoryname-rent {
   margin-top: 15px;
-  font-weight: 500;
+  font-weight: 800;
   text-align: center;
+  font-size: 60px;
+}
+
+p.exploreCategoryname-buy {
+  margin-top: 15px;
+  font-weight: 800;
+  text-align: center;
+  font-size: 60px;
 }
