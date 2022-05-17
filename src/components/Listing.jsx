@@ -50,7 +50,7 @@ export default function Listing() {
               background: `url(${listing.imageUrls[index]})
           center no-repeat`,
               backgroundSize: "cover",
-              height: "400px",
+              height: "600px",
             }}
           ></SwiperSlide>
         ))}
