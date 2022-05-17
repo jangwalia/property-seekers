@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ReactComponent as ArrowRightIcon } from "../assets/svg/keyboardArrowRightIcon.svg";
 import visibilityIcon from "../assets/svg/visibilityIcon.svg";
+import createAccount from "../assets/svg/createAccount.png"
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -61,9 +62,10 @@ export default function Signin() {
   };
   return (
     <div>
-      <div className="pageContainer">
-        <header>
-          <p className="pageHeader">Create Your Account</p>
+      <div className="signInContainer shadow-lg p-8 mb-5 rounded">
+        <header className="signInTitle">
+        <img src={createAccount} className="createAccountIcon"/>
+          <p >Create Your Account</p>
         </header>
         <main>
           <form onSubmit={handleSubmit}>
