@@ -6,6 +6,7 @@ import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 import Spinner from "./Spinner";
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
@@ -38,10 +39,18 @@ export default function Homeslider() {
       <>
         <p className="exploreHeading">Featured Listings</p>
         <Swiper
+          slidesPerView={1}
+          spaceBetween={30}
+          loop={true}
+         pagination={{
+          type: "fraction",
+          }}
+          navigation={{ clickable: true }}
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           slidesPerView={1}
           pagination={{ clickable: true }}
         >
+
           {listings.map(({ data, id }) => (
             <SwiperSlide
               key={id}
