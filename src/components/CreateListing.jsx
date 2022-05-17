@@ -431,10 +431,11 @@ export default function CreateListing() {
               />
             </div>
           </div>
-        </form>
-        <button type="submit" className="primaryButton createListingButton">
+          <button type="submit" className="primaryButton createListingButton">
           Create Listing
         </button>
+        </form>
+       
       </div>
     </div>
   );
