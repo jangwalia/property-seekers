@@ -61,7 +61,7 @@ export default function User() {
     // use firebase inbuilt signout button
     auth.signOut();
     navigate("/");
-    return
+    return;
   };
   //handle changeDetails through onSubmit
   const onSubmit = async () => {
@@ -107,66 +107,69 @@ export default function User() {
     return <Spinner />;
   }
   return (
-    <div className="profile">
-      <header className="profileHeader">
-        <p className="pageHeader">My Profile</p>
-        <button type="button" className="logOut" onClick={onlogout}>
-          Logout
-        </button>
-      </header>
-      <div className="profileDetailsHeader">
-        <p className="profileDetailsText">My Details</p>
-        <p
-          className="changePersonalDetails"
-          onClick={() => {
-            changeDetails && onSubmit();
-            setChangedetails((prevState) => !prevState);
-          }}
-        >
-          {changeDetails ? "Done" : "change"}
-        </p>
+    <div>
+      <div className="userProfile shadow-lg p-8 mb-5 rounded">
+        <header className="profileHeader">
+          <p className="pageHeader">My Profile</p>
+          <button type="button" className="logOut" onClick={onlogout}>
+            Logout
+          </button>
+        </header>
+        <div className="profileDetailsHeader">
+          <p className="profileDetailsText">My Details</p>
+          <p
+            className="changePersonalDetails"
+            onClick={() => {
+              changeDetails && onSubmit();
+              setChangedetails((prevState) => !prevState);
+            }}
+          >
+            {changeDetails ? "Done" : "change"}
+          </p>
+        </div>
+        <div className="profileCard">
+          <form>
+            <input
+              type="text"
+              id="name"
+              className={!changeDetails ? "profileName" : "profileNameActive"}
+              disabled={!changeDetails}
+              value={name}
+              onChange={onChange}
+            />
+            <input
+              type="text"
+              id="email"
+              className="profileEmail"
+              disabled
+              value={email}
+            />
+          </form>
+        </div>
+        <Link to="/create-listing" className="createListing">
+          <img src={homeIcon} alt="home" />
+          <p>Sell Or Rent Property</p>
+          <img src={rightArrow} alt="property" />
+        </Link>
+
+        {/* users listing details */}
+        {!loading && listings.length > 0 && (
+          <>
+            <p className="listingText">Your Listings</p>
+            <ul className="listingsList">
+              {listings.map((listing) => (
+                <Property
+                  key={listing.id}
+                  listingInfo={listing.data}
+                  onDelete={() => {
+                    onDelete(listing.id);
+                  }}
+                />
+              ))}
+            </ul>
+          </>
+        )}
       </div>
-      <div className="profileCard">
-        <form>
-          <input
-            type="text"
-            id="name"
-            className={!changeDetails ? "profileName" : "profileNameActive"}
-            disabled={!changeDetails}
-            value={name}
-            onChange={onChange}
-          />
-          <input
-            type="text"
-            id="email"
-            className="profileEmail"
-            disabled
-            value={email}
-          />
-        </form>
-      </div>
-      <Link to="/create-listing" className="createListing">
-        <img src={homeIcon} alt="home" />
-        <p>Sell Or Rent Property</p>
-        <img src={rightArrow} alt="property" />
-      </Link>
-      {/* users listing details */}
-      {!loading && listings.length > 0 && (
-        <>
-          <p className="listingText">Your Listings</p>
-          <ul className="listingsList">
-            {listings.map((listing) => (
-              <Property
-                key={listing.id}
-                listingInfo={listing.data}
-                onDelete={() => {
-                  onDelete(listing.id);
-                }}
-              />
-            ))}
-          </ul>
-        </>
-      )}
     </div>
   );
 }
