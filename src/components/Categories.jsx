@@ -90,6 +90,25 @@ const onFetchLoadMore = async () => {
             ? "Places for rent"
             : "Places for sale"}
         </p>
+        <main className='fileterData'>
+     <div>
+     <label>Bedrooms</label>
+        <select id = 'bedrooms'  className="form-select">
+        <option value='1'>1</option>
+        <option value="2">2</option>
+        <option value="3">3+</option>
+      </select>
+    </div>
+    <div>
+    <label>Bathrooms</label>
+        <select id = 'bathrooms' className="form-select">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3+</option>
+      </select>
+    </div>
+    
+    </main>
       </header>
       {!loading && listing.length > 0 ? (
         <>

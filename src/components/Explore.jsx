@@ -13,19 +13,19 @@ export default function Explore() {
       </header>
       <main>
         <Homeslider/>
-        <div class="headingBox">
+        <div className="headingBox">
           <h1 className="exploreCategoryHeading">Looking to...</h1>
         </div>
         <div className="exploreCategories">
           <Link to='/categories/rent'>
             <img src={rentImage} alt="property for rent" className='exploreCategoryImg' />
-            <div class="image__overlay">
+            <div className="image__overlay">
               <p className="exploreCategoryname-rent">RENT</p>
             </div>
           </Link>
           <Link to='/categories/sale'>
             <img src={sellImage} alt="property for sale" className='exploreCategoryImg' />
-            <div class="image__overlay">
+            <div className="image__overlay">
             <p className="exploreCategoryname-buy">BUY</p>
             </div>
           </Link>
