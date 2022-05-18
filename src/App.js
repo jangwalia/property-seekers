@@ -14,9 +14,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import CreateListing from './components/CreateListing';
 import Listing from './components/Listing';
 import Contactlandlord from './components/Contactlandlord';
+// import background from "./assets/background/background.jpg"
+
 function App() {
   return (
-    <div className="App">
+    <div className="App" >
      <Router>
      <Navbar/>
 
