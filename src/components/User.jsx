@@ -151,25 +151,26 @@ export default function User() {
           <p>Sell Or Rent Property</p>
           <img src={rightArrow} alt="property" />
         </Link>
-
-        {/* users listing details */}
-        {!loading && listings.length > 0 && (
-          <>
-            <p className="listingText">Your Listings</p>
-            <ul className="listingsList">
-              {listings.map((listing) => (
-                <Property
-                  key={listing.id}
-                  listingInfo={listing.data}
-                  onDelete={() => {
-                    onDelete(listing.id);
-                  }}
-                />
-              ))}
-            </ul>
-          </>
-        )}
       </div>
+      {/* users listing details */}
+      {!loading && listings.length > 0 && (
+        <>
+          <p className="listingText">Your Listings</p>
+          <div className="listingsList shadow-lg p-8 mb-5 rounded">
+            {/* <ul className="wrapper listingsList"> */}
+            {listings.map((listing) => (
+              <Property
+                key={listing.id}
+                listingInfo={listing.data}
+                onDelete={() => {
+                  onDelete(listing.id);
+                }}
+              />
+            ))}
+          </div>
+          {/* </ul> */}
+        </>
+      )}
     </div>
   );
 }

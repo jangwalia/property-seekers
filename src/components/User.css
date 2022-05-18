@@ -42,6 +42,28 @@
   max-width: 500px;
 }
 
+
+.listingsList{
+  margin: auto;
+  margin-top: 50px;
+  padding: 50px 70px;
+  width: 50%;
+  background-color: #99c4c8;
+}
+
+.listingsList .card {
+  padding-left: 4%;
+  padding-top: 4%;
+  padding-bottom: 4%;
+}
+
+.listingText {
+  margin-top: 3rem;
+  font-weight: bolder;
+  font-size: 2rem;
+  text-align: center;
+}
+
 .personalDetailsText {
   font-weight: 600;
 }
