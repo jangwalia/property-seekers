@@ -121,7 +121,7 @@ export default function Listing() {
           </MapContainer>
         </div>
 
-        <p className="listingLocationTitle">Location</p>
+      
         {/* map here */}
 
         {/*CONTACT LANDORD IF LISTING OWNER IS NOT THE USER */}
