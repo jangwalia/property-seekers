@@ -9,7 +9,7 @@ export default function Explore() {
   return (
     <div className='explore'>
       <header>
-        <p className='pageHeader'>Explore Listings</p>
+        <p className='pageHeader'>FEATURED LISTINGS</p>
       </header>
       <main>
         <Homeslider/>
@@ -30,6 +30,7 @@ export default function Explore() {
             </div>
           </Link>
         </div>
+
       </main>
     </div>
   )
