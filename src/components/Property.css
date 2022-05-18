@@ -1,19 +1,8 @@
-.categoryListing {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-  position: relative;
-}
 
-/* .categoryListingLink {
-  display: contents;
-} */
 
 .categoryListingImg {
   width: 30%;
   height: 100px;
-  border-radius: 1.5rem;
   object-fit: cover;
   transition: 0.5s;
 }
@@ -25,8 +14,8 @@
 
 @media (min-width: 1024px) {
   .categoryListingImg {
-    width: 19%;
-    height: 217px;
+    width: 262px;
+    height: 180px;
   }
 }
 
@@ -71,4 +60,11 @@
 .categoryListingInfoText {
   font-weight: 500;
   font-size: 0.7rem;
+}
+
+.removeIcon {
+  cursor: pointer;
+  position: relative;
+  top: -3%;
+  right: -90%;
 }
