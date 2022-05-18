@@ -7,6 +7,24 @@
 .pageHeader {
   font-size: 2rem;
   font-weight: 800;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.categoryListing {
+  margin: auto;
+  margin-top: 100px;
+  padding: 50px 70px;
+  width: 50%;
+  background-color: #99c4c8;
+  justify-content: space-between;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .category {

@@ -88,13 +88,13 @@ const onFetchLoadMore = async () => {
         <p className="pageHeader">
           {params.categoryname === "rent"
             ? "Places for rent"
-            : "places for sale"}
+            : "Places for sale"}
         </p>
       </header>
       {!loading && listing.length > 0 ? (
         <>
-          <main>
-            <ul className="categoryListings">
+          <main className="wrapper categoryListing shadow-lg p-8 mb-5 rounded">
+            {/* <ul className="categoryListings"> */}
               {listing.map((property) => (
                 <Property
                   key={property.id}
@@ -102,7 +102,7 @@ const onFetchLoadMore = async () => {
                   id={property.id}
                 />
               ))}
-            </ul>
+            {/* </ul> */}
           </main>
           <br/>
           <br/>

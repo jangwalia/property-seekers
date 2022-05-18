@@ -72,12 +72,6 @@ button {
   justify-content: center;
 }
 
-.removeIcon {
-  cursor: pointer;
-  position: relative;
-  top: -3%;
-  right: -2%;
-}
 .editIcon {
   cursor: pointer;
   position: absolute;
@@ -290,14 +284,6 @@ button {
 }
 
 
-.listingText {
-  margin-top: 3rem;
-  font-weight: 600;
-}
-
-.lisitingsList {
-  padding: 0;
-}
 
 /* 
 .offerBadge {
