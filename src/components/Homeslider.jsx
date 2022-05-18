@@ -2,14 +2,15 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
 import { db } from "../firebase.config";
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import SwiperCore, { EffectCoverflow, Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/effect-coverflow";
 import Spinner from "./Spinner";
 
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+SwiperCore.use([EffectCoverflow, Navigation, Pagination, Scrollbar, A11y]);
 export default function Homeslider() {
   const [loading, setLoading] = useState(true);
   const [listings, setListings] = useState(null);
@@ -37,18 +38,28 @@ export default function Homeslider() {
   return (
     listings && (
       <>
-        <p className="exploreHeading">Featured Listings</p>
+        {/* <p className="exploreHeading">Featured Listings</p> */}
         <Swiper
-          slidesPerView={1}
+          effect={"coverflow"}
+          centeredSlides={true}
+          slidesPerView={"auto"}
+          coverflowEffect={{
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          }}
           spaceBetween={30}
           loop={true}
          pagination={{
           type: "fraction",
           }}
           navigation={{ clickable: true }}
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
-          slidesPerView={1}
+          modules={[EffectCoverflow, Navigation, Pagination, Scrollbar, A11y]}
+          slidesPerView={"auto"}
           pagination={{ clickable: true }}
+          className="mySwiper"
         >
 
           {listings.map(({ data, id }) => (
@@ -59,6 +70,7 @@ export default function Homeslider() {
                 background: `url(${data.imageUrls[0]})
           center no-repeat`,
                 backgroundSize: "cover",
+                width: "800px",
                 height: "400px",
               }}
             ></SwiperSlide>

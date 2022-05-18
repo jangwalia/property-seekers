@@ -6,12 +6,15 @@
 
 .explore {
   margin: 1.5rem;
+  font-family: 'Hammersmith One', sans-serif;
 }
 
 .pageHeader {
   font-size: 2rem;
   font-weight: 800;
+  margin-bottom: 60px;
 }
+
 
 @media (min-width: 1217px) {
   .explore {
@@ -27,6 +30,12 @@
 .exploreHeading,
 .exploreCategoryHeading {
   font-weight: 700;
+}
+
+.headingBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .exploreCategoryHeading {
