@@ -29,6 +29,12 @@
   font-weight: 700;
 }
 
+.headingBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .exploreCategoryHeading {
   margin-top: 5rem;
   text-align: center;
