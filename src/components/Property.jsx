@@ -8,7 +8,9 @@ import "./Property.css";
 export default function Property({ listingInfo, id, onDelete }) {
   // let regulerEx = '/\B(?=(\d{3})+(?!\d))/g'
   return (
-    <div className="card-deck">
+    
+    
+     <div className="card-deck">
       <div className="card shadow-lg p-8 mb-5 rounded ">
         {/* <li className="categoryListing"> */}
           <Link
@@ -56,5 +58,7 @@ export default function Property({ listingInfo, id, onDelete }) {
         {/* </li> */}
       </div>
     </div>
+    
+   
   );
 }

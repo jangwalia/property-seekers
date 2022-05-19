@@ -1,0 +1,6 @@
+.fileterData{
+  display: flex;
+  width: 40%;
+  flex-direction: row;
+  justify-content: space-between;
+}

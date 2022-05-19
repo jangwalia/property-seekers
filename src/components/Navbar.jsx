@@ -4,7 +4,7 @@ import { ReactComponent as ExploreIcon } from "../assets/svg/exploreIcon.svg";
 import { ReactComponent as PersonOutlineIcon } from "../assets/svg/personOutlineIcon.svg";
 import { ReactComponent as LogoIcon } from "../assets/logos/property-seekers-LOGO.svg";
 import "./Navbar.css";
-
+import Filterdata from "./Filterdata";
 export default function Navbar() {
   //initialize navigate hook
   const navigate = useNavigate();
@@ -16,13 +16,13 @@ export default function Navbar() {
     }
   };
   return (
-    <nav class="navbar navbar-expand-lg navbar-light ">
+    <nav className="navbar navbar-expand-lg navbar-light ">
       <div className="container-fluid">
-        <a class="navbar-brand" href="/">
+        <a className="navbar-brand" href="/">
           <LogoIcon width="60%" height="60%" />
         </a>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNavAltMarkup"
@@ -30,10 +30,10 @@ export default function Navbar() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0"></ul>
           <div className="d-flex">
             <ul className="navbarListItems">
@@ -89,6 +89,7 @@ export default function Navbar() {
                 </p>
               </li>
             </ul>
+           
           </div>
         </div>
       </div>
