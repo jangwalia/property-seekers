@@ -113,7 +113,10 @@ const onFetchLoadMore = async () => {
         <select id = 'bedrooms'  className="form-select" onChange={onChange}>
         <option value='1'>1</option>
         <option value="2">2</option>
-        <option value="3">3+</option>
+        <option value="3">3</option>
+        <option value='4'>4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
       </select>
    
     </div>
@@ -121,9 +124,12 @@ const onFetchLoadMore = async () => {
     <div>
     <label>Bathrooms</label>
         <select id = 'bathrooms' className="form-select" onChange={onChange}>
-        <option value="1">1</option>
+        <option value='1'>1</option>
         <option value="2">2</option>
-        <option value="3">3+</option>
+        <option value="3">3</option>
+        <option value='4'>4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
       </select>
     </div>
     <button className="btn btn-outline-warning" type='submit'>Show Listing</button>
