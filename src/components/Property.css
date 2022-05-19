@@ -30,21 +30,21 @@
 
 .categoryListingLocation {
   font-weight: 600;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   opacity: 0.8;
   margin-bottom: 0;
 }
 
 .categoryListingName {
   font-weight: 600;
-  font-size: 1.25rem;
+  font-size: auto;
   margin: 0;
 }
 
 .categoryListingPrice {
   margin-top: 0.5rem;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 2rem;
   color: #FF5C00;
   margin-bottom: 0;
   display: flex;
