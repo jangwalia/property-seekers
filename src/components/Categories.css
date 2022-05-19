@@ -35,3 +35,10 @@
 .categoryListings {
   padding: 0;
 }
+.filterData{
+  display: flex;
+  width:21%;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #99c4c8;
+}

@@ -14,6 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import CreateListing from './components/CreateListing';
 import Listing from './components/Listing';
 import Contactlandlord from './components/Contactlandlord';
+import Filterdata from './components/Filterdata';
 // import background from "./assets/background/background.jpg"
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
          <Route path = '/create-listing' element={<CreateListing/>}/>
          <Route path='/categories/:categoryname/:listingID' element={<Listing/>}/>
          <Route path='/contact/:landLordID' element={<Contactlandlord/>}/>
+         <Route path='/filterData/:bedrooms/:bathrooms' element={<Filterdata/>}/>
        </Routes>
      </Router>
      <ToastContainer/>

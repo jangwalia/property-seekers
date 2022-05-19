@@ -1,6 +1,6 @@
 import Property from "./Property";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams,useNavigate } from "react-router-dom";
 import {
   collection,
   getDocs,
@@ -18,6 +18,23 @@ export default function Categories() {
   const [listing, setListing] = useState(null);
   const [lastListing,setLastListing]= useState(null)
   const [loading, setLoading] = useState(true);
+  const [filterData,setFilterData] = useState({
+    bedrooms : 1,
+    bathrooms : 1
+  })
+  const {bedrooms,bathrooms} = filterData
+  const navigate = useNavigate()
+  // handle onChange
+  const onChange = (e) =>{
+    setFilterData((prevState) => ({
+      ...prevState,
+      [e.target.id]: e.target.value,
+    }));
+  }
+  const handleSubmit = (e) =>{
+    e.preventDefault()
+    navigate(`/filterData/${bedrooms}/${bathrooms}`);
+  }
   const params = useParams();
   useEffect(() => {
     const fetchListing = async () => {
@@ -50,7 +67,7 @@ export default function Categories() {
       }
     };
     fetchListing();
-  }, [params.categoryname]);
+  }, [params.categoryname,bedrooms]);
 // Load More
 const onFetchLoadMore = async () => {
   try {
@@ -90,25 +107,28 @@ const onFetchLoadMore = async () => {
             ? "Places for rent"
             : "Places for sale"}
         </p>
-        <main className='fileterData'>
+  <form className="filterData" onSubmit={handleSubmit}>
      <div>
      <label>Bedrooms</label>
-        <select id = 'bedrooms'  className="form-select">
+        <select id = 'bedrooms'  className="form-select" onChange={onChange}>
         <option value='1'>1</option>
         <option value="2">2</option>
         <option value="3">3+</option>
       </select>
+   
     </div>
+
     <div>
     <label>Bathrooms</label>
-        <select id = 'bathrooms' className="form-select">
+        <select id = 'bathrooms' className="form-select" onChange={onChange}>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3+</option>
       </select>
     </div>
+    <button type='submit'>Show Listing</button>
+     </form>
     
-    </main>
       </header>
       {!loading && listing.length > 0 ? (
         <>
