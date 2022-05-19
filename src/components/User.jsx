@@ -156,7 +156,8 @@ export default function User() {
       {!loading && listings.length > 0 && (
         <>
           <p className="listingText">Your Listings</p>
-          <div className="listingsList shadow-lg p-8 mb-5 rounded">
+          <main>
+          {/* <div className="listingsList shadow-lg p-8 mb-5 rounded"> */}
             {/* <ul className="wrapper listingsList"> */}
             {listings.map((listing) => (
               <Property
@@ -167,7 +168,8 @@ export default function User() {
                 }}
               />
             ))}
-          </div>
+          </main>
+          {/* </div> */}
           {/* </ul> */}
         </>
       )}
