@@ -36,9 +36,13 @@
   padding: 0;
 }
 .filterData{
+  margin: auto;
   display: flex;
   width:21%;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #99c4c8;
+  
+}
+.filterData select {
+  border-radius: 20%;
 }

@@ -126,7 +126,7 @@ const onFetchLoadMore = async () => {
         <option value="3">3+</option>
       </select>
     </div>
-    <button type='submit'>Show Listing</button>
+    <button className="btn btn-outline-warning" type='submit'>Show Listing</button>
      </form>
     
       </header>
