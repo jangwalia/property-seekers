@@ -91,7 +91,7 @@ export default function Offer() {
       </header>
       {!loading && listing.length > 0 ? (
         <>
-          <main className="offerWrapper offerListing shadow-lg p-8 mb-5 rounded">
+          <main>
             {/* <ul className="categoryListings"> */}
               {listing.map((property) => (
                 <Property
