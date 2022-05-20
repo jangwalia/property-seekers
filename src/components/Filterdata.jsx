@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import Spinner from "./Spinner";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import {useParams } from "react-router-dom";
 import {
   collection,
   getDocs,
   query,
   where,
   orderBy,
-  limit,
-  startAfter,
+  limit
+  
 } from "firebase/firestore";
 import { db } from "../firebase.config";
 import { toast } from "react-toastify";
@@ -29,7 +29,7 @@ export default function Filterdata() {
         const q = query(
           listingRef,
           where("bedrooms", "==", numBedroomParams),
-          where('bathrooms','==',numBathroomParams),
+          where('bathrooms','==', numBathroomParams),
           orderBy("timestamp", "desc"),
           limit(6)
         );
