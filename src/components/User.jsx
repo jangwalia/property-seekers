@@ -17,7 +17,6 @@ import rightArrow from "../assets/svg/keyboardArrowRightIcon.svg";
 import homeIcon from "../assets/svg/homeIcon.svg";
 import Spinner from "./Spinner";
 import Property from "./Property";
-import Confirm from "../Helper/confirm";
 import "./User.css";
 
 export default function User() {
@@ -100,9 +99,7 @@ export default function User() {
       toast.success("Successfully Deleted Listing");
     }
   };
-  const showConfirm = (id) => {
-    return <Confirm id={id} />;
-  };
+  
   if (loading) {
     return <Spinner />;
   }

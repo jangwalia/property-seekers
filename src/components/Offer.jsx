@@ -1,6 +1,6 @@
 import Property from "./Property";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+//import { useParams } from "react-router-dom";
 import {
   collection,
   getDocs,
@@ -19,7 +19,7 @@ export default function Offer() {
   const [listing, setListing] = useState(null);
   const [loading, setLoading] = useState(true);
   const [lastListing, setLastListing] = useState(null);
-  const params = useParams();
+  // const params = useParams();
   useEffect(() => {
     const fetchListing = async () => {
       try {

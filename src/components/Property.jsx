@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ReactComponent as DeleteIcon } from "../assets/svg/deleteIcon.svg";
 import bedIcon from "../assets/svg/bedIcon.svg";
 import bathIcon from "../assets/svg/bathtubIcon.svg";
-import Confirm from "../Helper/confirm";
+
 import "./Property.css";
 
 export default function Property({ listingInfo, id, onDelete }) {
