@@ -17,8 +17,8 @@ export default function Filterdata() {
   const [listing,setListing] = useState(null)
   const[loading,setLoading] = useState(true)
   const params = useParams()
-  const numBedroomParams = Number(params.bedrooms)
-  const numBathroomParams = Number(params.bathrooms)
+  // const numBedroomParams = Number(params.bedrooms)
+  // const numBathroomParams = Number(params.bathrooms)
   useEffect(() => {
     
     const fetchListing = async () => {
@@ -28,8 +28,8 @@ export default function Filterdata() {
         //create a query
         const q = query(
           listingRef,
-          where("bedrooms", "==", numBedroomParams),
-          where('bathrooms','==', numBathroomParams),
+          where("bedrooms", "==", params.bedrooms),
+          where('bathrooms','==', params.bathrooms),
           orderBy("timestamp", "desc"),
           limit(6)
         );
