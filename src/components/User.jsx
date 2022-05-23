@@ -159,6 +159,7 @@ export default function User() {
             {listings.map((listing) => (
               <Property
                 key={listing.id}
+                id={listing.id}
                 listingInfo={listing.data}
                 onDelete={() => {
                   onDelete(listing.id);
