@@ -8,7 +8,7 @@ import {
 } from "firebase/storage";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import Spinner from "./Spinner";
-import createListingIcon from "../assets/svg/createListingIcon.png"
+import createListingIcon from "../assets/svg/createListingIcon.png";
 import { db } from "../firebase.config";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -154,7 +154,7 @@ export default function CreateListing() {
       [...images].map((image) => storeImage(image))
     ).catch((error) => {
       setLoading(false);
-      console.log(error)
+      console.log(error);
       toast.error("Images not uploaded");
       return;
     });
@@ -211,13 +211,10 @@ export default function CreateListing() {
     <div>
       <div className="listingForm shadow-lg p-8 mb-5 rounded">
         <div className="listingTitle">
-          <img src={createListingIcon} className="listingIcon"/>
+          <img src={createListingIcon} className="listingIcon" />
           <p>Create a Listing</p>
         </div>
-        <form
-          onSubmit={onSubmit}
-         className="listingCreateForm"
-        >
+        <form onSubmit={onSubmit} className="listingCreateForm">
           <div className="cols">
             <div className="form-group">
               <label className="formLabel">Sell / Rent</label>
@@ -433,10 +430,9 @@ export default function CreateListing() {
             </div>
           </div>
           <button type="submit" className="primaryButton createListingButton">
-          Create Listing
-        </button>
+            Create Listing
+          </button>
         </form>
-       
       </div>
     </div>
   );

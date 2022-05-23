@@ -1,9 +1,8 @@
 .shareIconDiv {
   cursor: pointer;
-  position: fixed;
-  top: 35%;
-  right: 5%;
-  z-index: 2;
+  position: absolute;
+  top: 105%;
+  left: 95%;
   background-color: #ff5c00;
   border-radius: 50%;
   width: 3rem;
