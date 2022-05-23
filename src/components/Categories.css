@@ -46,3 +46,23 @@
 .filterData select {
   border-radius: 20%;
 }
+
+.filter-button {
+  cursor: pointer;
+  background: #FF5C00;
+  border-radius: 1rem;
+  padding: 0.85rem 2rem;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.25rem;
+  width: 36%;
+  margin: 0px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+}
+
+.filter-label {
+  font-weight: 600;
+}
