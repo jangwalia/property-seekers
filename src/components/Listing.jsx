@@ -39,9 +39,15 @@ export default function Listing() {
   return (
     <main>
       <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
         slidesPerView={1}
-        pagination={{ clickable: true }}
+        spaceBetween={30}
+        loop={true}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        className="mySwiper"
       >
         {listing.imageUrls.map((url, index) => (
           <SwiperSlide
