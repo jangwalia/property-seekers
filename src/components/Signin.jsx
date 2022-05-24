@@ -103,7 +103,7 @@ export default function Signin() {
               
             </div>
             <Link to="/forgotPassword" className="forgotPasswordLink">
-              forgot password
+              Forgot password
             </Link>
             <div className="signUpBar">
               <p className="signUpText">Register</p>
@@ -113,7 +113,7 @@ export default function Signin() {
             </div>
           </form>
           <Link to="/login" className="registerLink">
-            Log In..if Already registered
+            Log In..if Already Registered
           </Link>
         </main>
       </div>

@@ -77,7 +77,7 @@ export default function Login() {
               />
             </div>
             <Link to="/forgotPassword" className="forgotPasswordLink">
-              forgot password
+              Forgot password
             </Link>
             <div className="signInBar">
               <p className="signInText">Log In</p>
