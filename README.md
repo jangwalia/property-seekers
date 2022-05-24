@@ -25,10 +25,10 @@ The listings use Google geocoding to get the coords from the address field. You 
 ## Getting Started
 
 #### Dependancies:
-npm install
+`npm install`
 
 #### Running the application:
-npm start
+`npm start`
 
 ![desktop photo](https://github.com/jangwalia/property-seekers/blob/e5ed7053ce36b9520ae253f8ae9d76c45b681313/app-screenshots/app-page1.png)
 
