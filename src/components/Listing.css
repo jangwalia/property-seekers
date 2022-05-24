@@ -12,9 +12,9 @@
   align-items: center;
 }
 .linkCopied {
-  position: fixed;
-  top: 15%;
-  right: 5%;
+  position: absolute;
+  top: 95%;
+  left: 92%;
   z-index: 2;
   background-color: #ffffff;
   border-radius: 1rem;
