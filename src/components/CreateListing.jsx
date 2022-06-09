@@ -50,7 +50,7 @@ export default function CreateListing() {
   const auth = getAuth();
   const navigate = useNavigate();
   const isMounted = useRef(true);
-
+//to check if current user is logged in or not
   useEffect(() => {
     if (isMounted) {
       onAuthStateChanged(auth, (user) => {
@@ -67,7 +67,7 @@ export default function CreateListing() {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isMounted]);
-
+//submiting the form
   const onSubmit = async (e) => {
     e.preventDefault();
 
